@@ -8,86 +8,100 @@ namespace Projejct.v._2
 {
     public class Triangle
     {
-        public double a; // первая сторона
-        public double b; // вторая сторона
-        public double c; // третья сторона
-        public double ha; 
-        public Triangle(double A, double B, double C) 
+        public double a;// первая сторона
+        public double b;// вторая сторона
+        public double c;// третья сторона
+        public double h;// Высота
+        public Triangle(double A, double B, double C) //Конструктор
         {
-            a = A; 
+            a = A; //Создаём с заданными длинами сторон согласнозаданию
             b = B;
             c = C;
         }
-        public Triangle() 
+        public Triangle(double A, double B, double C, double H) //Конструктор с высотой
+        {
+            a = A;
+            b = B;
+            c = C;
+            h = H;
+        }
+        /*public string TriangleType
+        {
+            get
+            {
+                if (a == b && a == c && b == c)
+                    return "ранвобедренний";
+                else if (a == b || a == c || b == c)
+            }
+        }*/
+        public Triangle() // Конструктор, создаст треугольник без указания переметров треугольника
         {
         }
-        public Triangle(double A, double HA) 
+
+        public string outputA() // выводим сторону а, данный метод возвращает строковое значение (атрибут string)
         {
-            a = A; 
-            ha = HA;
+            return Convert.ToString(a); // a - ссылка на внутреннее поле объекта класса
         }
-        public double SurfaceAHA()
+        public string outputB()
         {
-            double s = (1 / 2) * a * ha;
-            return s;
+            return Convert.ToString(b); // выводим сторону b
         }
-        public double GetSetA 
+        public string outputC() // выводим сторону с
         {
-            get 
+            return Convert.ToString(c); //возврощает строку с
+        }
+        public double Perimeter() // сумма всех сторон типа double
+        {
+            double p = a + b + c; // вычисление
+            return p; // возврат
+        }
+        public double perimeterforh()
+        {
+            return Perimeter() * 0.5; // Формула для вычисления
+        }
+        public double Height() // Вычисление высоту треугольника
+        {
+
+            double p = perimeterforh();
+            double h = 2 * Math.Sqrt(p * (p - a) * (p - b) * (p - c)) / a; // Формула для вычисления
+            return h; // Выводим высоту
+
+        }
+        public double Surface() // аналогично периметру
+        {
+            double p = (a + b + c) / 2;
+            double s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
+            return s;//возврас s
+        }
+        public double GetSetA // свойство позволяющее установить либо изменить значение стороны а
+        {
+            get
             { return a; }
-            set 
+            set
             { a = value; }
         }
-        public double GetSetB
+        public double GetSetB // свойство позволяющее установить либо изменить значение стороны b
         {
             get
             { return b; }
             set
             { b = value; }
         }
-        public double GetSetC 
+        public double GetSetC // свойство позволяющее установить либо изменить значение стороны c
         {
             get
             { return c; }
             set
             { c = value; }
         }
-        public bool ExistTriangle 
+        public bool ExistTriangle // свойство позволяющее установить, существует ли треугольник с заданыыми сторонами
         {
             get
             {
-                if ((a < b + c) && (b < a + c) && (c < a + b))
-                    return false;
-                else return true;
+                if ((a > b + c) && (b > a + c) && (c > a + b))//сумма 2 сторон должна быть больше третьей
+                    return false; //возврощает неверно
+                else return true; //вызврощает верно
             }
         }
-
-        public string outputA() 
-        {
-            return Convert.ToString(a); 
-        }
-        public string outputB()
-        {
-            return Convert.ToString(b); 
-        }
-        public string outputC() 
-        {
-            return Convert.ToString(c);
-        }
-        public double Perimeter() 
-        {
-            double p = 0;
-            p = a + b + c; 
-            return p; 
-        }
-        public double Surface()
-        {
-            double s = 0;
-            double p = 0;
-            p = (a + b + c) / 2;
-            s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
-            return s;
-        }
-
     }
 }
