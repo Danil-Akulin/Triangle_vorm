@@ -37,23 +37,10 @@ namespace Projejct.v._2
                 Triangle triangle = new Triangle(a, b, c);
                 listView1.Items.Add("Сторона a");
                 listView1.Items.Add("Высота h");
-                //listView1.Items.Add("Сторона c");
-                //listView1.Items.Add("Высота");
                 listView1.Items.Add("Периметр");
-                listView1.Items.Add("Существует");
-                listView1.Items.Add("Спецификатор");
-                listView1.Items[0].SubItems.Add(triangle.outputA());
-                listView1.Items[1].SubItems.Add(triangle.outputB());
-                //listView1.Items[2].SubItems.Add(triangle.outputC());
-                //listView1.Items[3].SubItems.Add(Convert.ToString(triangle.Height()));//Высота
-                listView1.Items[4].SubItems.Add(Convert.ToString(triangle.Surfaces_v()));
-
-
-                //if (triangle.ExistTriangle) { listView1.Items[5].SubItems.Add("Cуществует"); }
-                //else listView1.Items[6].SubItems.Add("Не существует");
-
-
-
+                listView1.Items[0].SubItems.Add(triangle.outputA());                     //заполняет первую ячейку
+                listView1.Items[1].SubItems.Add(triangle.outputB());                     //заполняет вторую ячейку
+                listView1.Items[2].SubItems.Add(Convert.ToString(triangle.Surfaces_v()));//заполняет третью ячейку
             }
         }
 
@@ -64,9 +51,9 @@ namespace Projejct.v._2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
-            f1.Show();
-            this.Hide();
+            Form1 f1 = new Form1();             
+            f1.Show();                  //отвечает за переход на первую форму
+            this.Hide();                // отвечает за скрытие формы
         }
 
 

@@ -25,15 +25,6 @@ namespace Projejct.v._2
             c = C;
             h = H;
         }
-        /*public string TriangleType
-        {
-            get
-            {
-                if (a == b && a == c && b == c)
-                    return "ранвобедренний";
-                else if (a == b || a == c || b == c)
-            }
-        }*/
         public Triangle() // Конструктор, создаст треугольник без указания переметров треугольника
         {
         }
