@@ -73,6 +73,12 @@ namespace Projejct.v._2
             double s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
             return s;//возврас s
         }
+        public double Surfaces_v() // аналогично периметру
+        {
+            double SET = 0;
+            double s = Math.Sqrt(SET * a * h);
+            return s;//возврас s
+        }
         public double GetSetA // свойство позволяющее установить либо изменить значение стороны а
         {
             get
